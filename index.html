@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Barometer readings from Navarre, FL during Hurricane Isaias, compared with the NHC track and nearby airport stations.">
+<title>Isaias at Navarre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Archivo+Narrow:wght@600;700&display=swap">
+<style>
+:root{
+  --bg:#f5f7f8; --panel:#ffffff; --ink:#0f1a22; --ink2:#4a5761; --ink3:#7a8790;
+  --rule:#d9e0e4; --grid:#e8edf0; --accent:#1f5f8b;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --land:#e7ebe3; --water:#e3edf3; --track:#0f1a22;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#11171b; --panel:#182027; --ink:#eef3f6; --ink2:#b3c0c8; --ink3:#83929b;
+  --rule:#2b3740; --grid:#222c33; --accent:#7fb6dc;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --land:#1f2722; --water:#15222b; --track:#eef3f6;}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#11171b; --panel:#182027; --ink:#eef3f6; --ink2:#b3c0c8; --ink3:#83929b;
+  --rule:#2b3740; --grid:#222c33; --accent:#7fb6dc;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --land:#1f2722; --water:#15222b; --track:#eef3f6;}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 "IBM Plex Sans",system-ui,sans-serif;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:960px;margin:0 auto;display:grid;gap:28px}
+h1,h2{font-family:"Archivo Narrow","IBM Plex Sans",sans-serif;text-wrap:balance;margin:0;letter-spacing:.01em}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.1}
+h2{font-size:21px}
+.eyebrow{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+p{margin:0;max-width:68ch;color:var(--ink2)}
+header{display:grid;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.stat{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px 16px;display:grid;gap:2px}
+.stat b{font:500 24px "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--ink2)}
+section{display:grid;gap:12px}
+.fig{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:14px;position:relative}
+svg{display:block;width:100%;height:auto}
+svg text{fill:var(--ink2);font:12px "IBM Plex Mono",monospace}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink2);margin-bottom:6px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font:12px/1.4 "IBM Plex Mono",monospace;padding:6px 8px;border-radius:4px;white-space:nowrap}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:14px;background:var(--panel)}
+th,td{padding:7px 10px;border-bottom:1px solid var(--rule);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--ink3)}
+tr.low td{font-weight:600;color:var(--ink)}
+ul{margin:0;padding-left:20px;color:var(--ink2);max-width:68ch;display:grid;gap:6px}
+.note{font-size:13px;color:var(--ink3)}
+a{color:var(--accent)}
+</style>
+<style>*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Hurricane Isaias · Friday, October 9, 2026 · times CDT</div>
+  <h1>A barometer in Navarre as Isaias came ashore</h1>
+  <p>Thirteen readings from a dial barometer in Navarre, FL, about 24 ft above sea level, compared with the National Hurricane Center's track and with airport weather stations in Destin and Pensacola.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><span>Lowest reading in Navarre</span><b>29.35 inHg</b><span>8:16 PM, as read off the gauge</span></div>
+  <div class="stat"><span>Same reading, corrected</span><b>≈29.24 inHg</b><span>≈990 mb at sea level</span></div>
+  <div class="stat"><span>Closest the center came</span><b>≈21 mi</b><span>East of Navarre, 7:00–8:30 PM</span></div>
+  <div class="stat"><span>Landfall, per NHC</span><b>8:30 PM</b><span>Near Destin, 105 mph, 971 mb</span></div>
+</div>
+
+<section>
+  <h2>The pressure dropped as the center passed to the east</h2>
+  <p>His readings are shifted down by 0.11 inHg. That adds 0.03 for his 24 ft elevation and subtracts 0.14 because the gauge read high. The 0.14 comes from his 4–6 PM readings, which ran above the nearby stations by a steady 0.13–0.15. Destin Airport sat almost on the storm's path and bottomed out at 29.00 inHg right at landfall.</p>
+  <div class="fig" id="pfig">
+    <div class="legend"><span><i style="background:var(--s1)"></i>Navarre (corrected)</span><span><i style="background:var(--s2)"></i>Destin Airport (KDTS)</span><span><i style="background:var(--s3)"></i>Pensacola Airport (KPNS)</span></div>
+    <svg id="pchart" viewBox="0 0 900 380" role="img" aria-label="Sea-level pressure from 4 to 10:30 PM for Navarre, Destin and Pensacola"></svg>
+    <div class="tip" id="tip" hidden></div>
+  </div>
+  <p class="note">The flat stretch from 6:30 to 7:45 PM, followed by a sudden drop at 8:16, may mean the needle stuck while the pressure was falling fast. Aneroid dials often lag like this. Tapping the glass before each reading frees the needle. The barometer was indoors, so the bump at 7:24 could also come from wind changing the air pressure inside the house, which can move a reading by a millibar or more. Gusts were near their peak then, and the wind direction was shifting as the center passed.</p>
+</section>
+
+<section>
+  <h2>He was outside the eye, on its west side</h2>
+  <p>The track runs north across the coast about 20 miles east of Navarre. The dashed circle has a radius of 17 miles (15 nautical miles), which is roughly the NHC's estimate of where the strongest winds were around landfall. Navarre sits just outside it. If the eye had passed overhead, his reading would have bottomed out near Destin's and stayed flat for a while. Instead it dipped once and recovered within an hour.</p>
+  <div class="fig">
+    <svg id="map" viewBox="0 0 557 700" style="max-width:580px;margin:0 auto" role="img" aria-label="Map of Isaias's track past Navarre, Destin and Pensacola"></svg>
+  </div>
+  <p class="note">The shoreline is a rough sketch through the beach towns, not a survey line. The NHC rounds center positions to 0.1° (about 7 mi), so distances are good to a few miles.</p>
+</section>
+
+<section>
+  <h2>Distance from Navarre to the storm's center</h2>
+  <div class="fig">
+    <svg id="dchart" viewBox="0 0 900 260" role="img" aria-label="Distance from Navarre to the storm center over time"></svg>
+  </div>
+</section>
+
+<section>
+  <h2>The readings</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Time (CDT)</th><th>Gauge (inHg)</th><th>Corrected (inHg)</th><th>Corrected (mb)</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>How to read this</h2>
+  <ul>
+    <li>His lowest pressure came at 8:16 PM, about 15 minutes before the NHC's landfall time. That fits a center passing to his east and moving north at about 19 mph.</li>
+    <li>His corrected low of about 990 mb was 8 mb higher than Destin's 982 mb and 19 mb higher than the storm's 971 mb center. Pressure rises quickly with distance from the eye.</li>
+    <li>His reading between 8:16 and 9:04 PM is missing, so the true low may have been a little lower than 29.35 on the gauge.</li>
+    <li>Navarre was on the west side of the storm, which is usually the weaker side. Onshore winds and the highest storm surge are usually east of where the center crosses the coast.</li>
+  </ul>
+  <p class="note">Sources: NHC best track AL092026 (preliminary) and hourly position updates and advisories (<a href="https://www.nhc.noaa.gov/text/MIATCDAT4.shtml">Discussion 14</a>); airport observations from the <a href="https://mesonet.agron.iastate.edu/request/download.phtml">Iowa Environmental Mesonet ASOS archive</a>. The NHC's final storm report will come out months from now and may revise these numbers.</p>
+</section>
+</div>
+
+<script>
+const bro=[["16:11",29.72],["16:15",29.70],["16:45",29.65],["17:15",29.625],["17:45",29.60],["18:27",29.575],["18:55",29.58],["19:24",29.625],["19:47",29.55],["20:16",29.35],["21:04",29.50],["21:59",29.60],["22:17",29.65]];
+const ADJ=0.026-0.14;
+const ST={"DTS":[["16:02",29.59],["16:53",29.49],["16:58",29.47],["17:12",29.44],["17:29",29.43],["17:46",29.38],["17:53",29.37],["18:12",29.29],["18:16",29.33],["18:32",29.3],["18:42",29.27],["18:53",29.27],["19:41",29.12],["19:53",29.13],["19:59",29.1],["20:10",29.08],["20:30",29.0],["20:44",29.07],["20:53",29.08],["21:00",29.11],["21:53",29.35]],"PNS":[["16:11",29.62],["16:14",29.62],["16:34",29.59],["16:53",29.57],["17:04",29.58],["17:23",29.56],["17:40",29.56],["17:53",29.58],["18:25",29.49],["18:45",29.24],["18:53",29.24],["19:22",29.3],["19:32",29.35],["19:40",29.37],["19:50",29.43],["19:53",29.44],["20:06",29.46],["20:53",29.53],["21:18",29.59],["21:53",29.64]]};
+const TRACK=[["1:00 PM",28.5,-87.1,959],["5:00 PM",29.5,-86.9,958],["6:00 PM",29.8,-86.8,960],["7:00 PM",30.2,-86.6,967],["8:00 PM",30.2,-86.5,971],["8:30 PM",30.4,-86.5,971],["9:00 PM",30.5,-86.4,978],["10:00 PM",30.8,-86.5,982]];
+const DIST=[["17:00",62.2],["18:00",41.6],["19:00",20.8],["20:00",25.5],["20:30",21.5],["21:00",28.3],["22:00",35.0]];
+const NS="http://www.w3.org/2000/svg";
+const mins=s=>{const[h,m]=s.split(":").map(Number);return h*60+m};
+const clock=m=>{const h=Math.floor(m/60),mm=m%60;return `${h>12?h-12:h}:${String(mm).padStart(2,"0")} PM`};
+function el(p,t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;p.appendChild(e);return e}
+const tip=document.getElementById("tip");
+function showTip(fig,evt,html){tip.hidden=false;tip.innerHTML=html;const r=fig.getBoundingClientRect();let x=evt.clientX-r.left+12,y=evt.clientY-r.top-34;if(x+tip.offsetWidth>r.width)x-=tip.offsetWidth+24;tip.style.left=x+"px";tip.style.top=Math.max(0,y)+"px"}
+
+/* pressure chart */
+(function(){
+  const svg=document.getElementById("pchart"),fig=document.getElementById("pfig");
+  const L=56,R=884,T=14,B=340,x0=960,x1=1350,y0=28.95,y1=29.70;
+  const X=m=>L+(m-x0)/(x1-x0)*(R-L),Y=p=>B-(p-y0)/(y1-y0)*(B-T);
+  for(let p=29.0;p<=29.701;p+=0.1){el(svg,"line",{x1:L,x2:R,y1:Y(p),y2:Y(p),stroke:"var(--grid)"});el(svg,"text",{x:L-8,y:Y(p)+4,"text-anchor":"end"},p.toFixed(1))}
+  for(let m=960;m<=1320;m+=60)el(svg,"text",{x:X(m),y:B+22,"text-anchor":"middle"},(m/60-12)+" PM");
+  el(svg,"line",{x1:L,x2:R,y1:B,y2:B,stroke:"var(--rule)"});
+  const lf=X(1230);el(svg,"line",{x1:lf,x2:lf,y1:T,y2:B,stroke:"var(--ink3)","stroke-dasharray":"4 4"});
+  el(svg,"text",{x:lf+6,y:T+12},"landfall 8:30");
+  const series=[["Destin",ST.DTS.map(([t,p])=>[mins(t),p]),"var(--s2)",0],["Pensacola",ST.PNS.map(([t,p])=>[mins(t),p]),"var(--s3)",0],["Navarre",bro.map(([t,p])=>[mins(t),+(p+ADJ).toFixed(3),p]),"var(--s1)",1]];
+  for(const[name,pts,c,main]of series){
+    el(svg,"path",{d:pts.map((q,i)=>(i?"L":"M")+X(q[0]).toFixed(1)+" "+Y(q[1]).toFixed(1)).join(""),fill:"none",stroke:c,"stroke-width":main?2.5:2,"stroke-linejoin":"round",opacity:main?1:.85});
+    for(const q of pts){
+      el(svg,"circle",{cx:X(q[0]),cy:Y(q[1]),r:main?5:3,fill:c,stroke:"var(--panel)","stroke-width":2});
+      const hit=el(svg,"circle",{cx:X(q[0]),cy:Y(q[1]),r:10,fill:"transparent"});
+      const html=`<b>${name}</b> · ${clock(q[0])}<br>${q[1].toFixed(2)} inHg · ${Math.round(q[1]*33.8639)} mb`+(q[2]!=null?`<br>gauge read ${q[2]}`:"");
+      hit.addEventListener("pointerenter",e=>showTip(fig,e,html));hit.addEventListener("pointerleave",()=>tip.hidden=true);
+    }
+  }
+  const lo=series[2][1][9];el(svg,"text",{x:X(lo[0])-8,y:Y(lo[1])+20,"text-anchor":"end",style:"fill:var(--ink)"},"Navarre low ≈29.24");
+  el(svg,"text",{x:X(1230)+8,y:Y(29.0)+4,style:"fill:var(--ink)"},"Destin 29.00");
+})();
+
+/* map */
+(function(){
+  const svg=document.getElementById("map");
+  const lo0=-87.45,lo1=-85.98,la0=29.35,la1=30.95,H=700,k=Math.cos(30*Math.PI/180);
+  const s=H/(la1-la0),W=(lo1-lo0)*k*s,ox=0;
+  const P=(la,lo)=>[ox+(lo-lo0)*k*s,H-(la-la0)*s];
+  el(svg,"rect",{x:0,y:0,width:W,height:H,fill:"var(--water)"});
+  const coast=[[30.29,-87.45],[30.33,-87.14],[30.36,-86.98],[30.38,-86.86],[30.39,-86.70],[30.39,-86.60],[30.39,-86.47],[30.37,-86.36],[30.31,-85.98]];
+  let d="M0 0";for(const[a,b]of coast)d+="L"+P(a,b).join(" ");d+="L"+W+" 0Z";
+  el(svg,"path",{d,fill:"var(--land)",stroke:"var(--ink3)","stroke-width":1});
+  for(let la=29.5;la<=30.9;la+=0.5){const[,y]=P(la,0);el(svg,"line",{x1:0,x2:W,y1:y,y2:y,stroke:"var(--grid)"});el(svg,"text",{x:6,y:y-5},la.toFixed(1)+"°N")}
+  for(let lo=-87.25;lo<=-86.2;lo+=0.5){const[x]=P(30,lo);el(svg,"line",{x1:x,x2:x,y1:0,y2:H,stroke:"var(--grid)"});el(svg,"text",{x:x+4,y:H-8},(-lo).toFixed(2)+"°W")}
+  const [cx,cy]=P(30.4,-86.5);el(svg,"circle",{cx,cy,r:(17/69)*s,fill:"none",stroke:"var(--s2)","stroke-width":1.5,"stroke-dasharray":"5 4"});
+  const tr=TRACK.slice(1);
+  el(svg,"path",{d:tr.map((t,i)=>(i?"L":"M")+P(t[1],t[2]).join(" ")).join(""),fill:"none",stroke:"var(--track)","stroke-width":2});
+  const side={"7:00 PM":-1};
+  for(const[t,la,lo,mb]of tr){const[x,y]=P(la,lo);el(svg,"circle",{cx:x,cy:y,r:5,fill:"var(--track)",stroke:"var(--panel)","stroke-width":2});
+    const l=side[t]===-1;el(svg,"text",{x:l?x-10:x+10,y:y+(t==="8:30 PM"?-8:4),"text-anchor":l?"end":"start",style:"fill:var(--ink)"},t==="8:30 PM"?"8:30 PM landfall":`${t} · ${mb} mb`)}
+  const places=[["Navarre",30.40,-86.86,1],["Pensacola",30.42,-87.21,0],["Destin",30.39,-86.47,0]];
+  for(const[n,la,lo,me]of places){const[x,y]=P(la,lo);
+    if(me){el(svg,"circle",{cx:x,cy:y,r:7,fill:"var(--s1)",stroke:"var(--panel)","stroke-width":2});el(svg,"text",{x:x,y:y-14,"text-anchor":"middle",style:"fill:var(--ink);font-weight:600"},"Navarre")}
+    else{el(svg,"rect",{x:x-3,y:y-3,width:6,height:6,fill:"var(--ink2)"});el(svg,"text",{x:n==="Destin"?x+10:x,y:n==="Destin"?y+20:y-10,"text-anchor":n==="Destin"?"start":"middle"},n)}}
+  {const[x,y]=P(29.5,-86.9);el(svg,"text",{x:x-10,y:y+24,"text-anchor":"middle"},"↓ from the Gulf; 1 PM center at 28.5°N")}
+  el(svg,"text",{x:P(0,-87.1)[0],y:P(29.8,0)[1],"text-anchor":"middle"},"Gulf of Mexico");
+})();
+
+/* distance chart */
+(function(){
+  const svg=document.getElementById("dchart");
+  const L=56,R=884,T=14,B=220,x0=960,x1=1350,y1=70;
+  const X=m=>L+(m-x0)/(x1-x0)*(R-L),Y=v=>B-v/y1*(B-T);
+  for(let v=0;v<=70;v+=20){el(svg,"line",{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:"var(--grid)"});el(svg,"text",{x:L-8,y:Y(v)+4,"text-anchor":"end"},v+" mi")}
+  for(let m=960;m<=1320;m+=60)el(svg,"text",{x:X(m),y:B+22,"text-anchor":"middle"},(m/60-12)+" PM");
+  const pts=DIST.map(([t,v])=>[mins(t),v]);
+  el(svg,"path",{d:pts.map((q,i)=>(i?"L":"M")+X(q[0])+" "+Y(q[1])).join(""),fill:"none",stroke:"var(--s1)","stroke-width":2});
+  for(const q of pts){el(svg,"circle",{cx:X(q[0]),cy:Y(q[1]),r:5,fill:"var(--s1)",stroke:"var(--panel)","stroke-width":2});el(svg,"text",{x:X(q[0]),y:Y(q[1])-10,"text-anchor":"middle"},q[1].toFixed(0))}
+  el(svg,"line",{x1:X(mins("20:16")),x2:X(mins("20:16")),y1:T,y2:B,stroke:"var(--ink3)","stroke-dasharray":"4 4"});
+  el(svg,"text",{x:X(mins("20:16"))-6,y:T+12,"text-anchor":"end"},"his low, 8:16");
+})();
+
+document.getElementById("rows").innerHTML=bro.map(([t,p])=>{const c=p+ADJ;return `<tr class="${t==="20:16"?"low":""}"><td>${clock(mins(t))}</td><td>${p.toFixed(3).replace(/0$/,"")}</td><td>${c.toFixed(2)}</td><td>${Math.round(c*33.8639)}</td></tr>`}).join("");
+</script>
+</body>
+</html>
